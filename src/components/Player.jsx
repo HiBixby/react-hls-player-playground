@@ -108,7 +108,9 @@ function Player({ src }) {
     }
     addVideo();
   }, [src, origin]);
-  function timeUpdateHandler(e) {}
+  function timeUpdateHandler(e) {
+    appendNextSegment();
+  }
   function seekingHandler(e) {
     if (mediaSourceRef.current.readyState == "open") {
       sourceBufferRef.current.abort();
